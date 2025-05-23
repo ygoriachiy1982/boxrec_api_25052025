@@ -1,31 +1,28 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
-    "sourceMap": false,
-    "outDir": "./dist",
+    "lib": ["dom", "dom.iterable", "es6"],
+    "allowJs": true,
+    "skipLibCheck": true,
     "strict": true,
-    "declaration": true,
-    "strictPropertyInitialization": false,
-    "lib": [
-      "dom",
-      "es2015",
-      "es2016.array.include",
-      "es2015.symbol",
-      "es2015.iterable",
-      "esnext.asynciterable",
-      "es2017"
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
     ],
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts",
-    "**/*.spec.e2e.ts",
-    "**/__tests__/"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
